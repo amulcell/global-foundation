@@ -19,10 +19,10 @@ const galleryCategories = [
 function Gallery() {
   return (
     <div className="gallery-page" style={{ padding: "40px 5% 80px 5%", maxWidth: "1280px", margin: "0 auto" }}>
-      <section className="gallery-hero" style={{ background: "linear-gradient(135deg, #EFF6FF 0%, #ECFEFF 100%)", padding: "50px 40px", borderRadius: "28px", border: "1px solid #BFDBFE", display: "grid", gridTemplateColumns: "1.2fr 0.8fr", gap: "40px", alignItems: "center", marginBottom: "60px" }}>
+      <section className="gallery-hero" style={{ background: "linear-gradient(135deg, #EFF6FF 0%, #ECFEFF 100%)", padding: "40px 20px", borderRadius: "28px", border: "1px solid #BFDBFE", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "30px", alignItems: "center", marginBottom: "60px" }}>
         <div>
           <span className="section-label">OUR GALLERY</span>
-          <h1 style={{ color: "#1E3A8A", fontSize: "40px", fontWeight: "800", lineHeight: "1.2", margin: "12px 0" }}>
+          <h1 style={{ color: "#1E3A8A", fontSize: "36px", fontWeight: "800", lineHeight: "1.2", margin: "12px 0" }}>
             Moments That <span style={{ color: "#06B6D4" }}>Create Impact.</span>
           </h1>
           <p style={{ color: "#334155", fontSize: "16px", lineHeight: "1.7", marginBottom: "24px", fontWeight: "600" }}>
@@ -34,13 +34,13 @@ function Gallery() {
             </div>
           </div>
         </div>
-        <div style={{ borderRadius: "20px", overflow: "hidden", height: "260px", boxShadow: "0 15px 30px rgba(0,0,0,0.08)", border: "3px solid #FFFFFF" }}>
+        <div style={{ width: "100%", borderRadius: "20px", overflow: "hidden", height: "260px", boxShadow: "0 15px 30px rgba(0,0,0,0.08)", border: "3px solid #FFFFFF" }}>
           <img src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=1000&q=80" alt="Global Foundation Gallery Hero" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
         </div>
       </section>
 
       <section className="gallery-section">
-        <div className="gallery-heading" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "30px" }}>
+        <div className="gallery-heading" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "30px", flexWrap: "wrap", gap: "15px" }}>
           <div>
             <span className="section-label">PROJECT SNAPSHOTS</span>
             <h2 style={{ color: "#1E3A8A", fontSize: "28px", fontWeight: "800" }}>10 Core Project Galleries</h2>
