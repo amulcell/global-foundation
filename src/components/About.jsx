@@ -6,10 +6,10 @@ function About() {
   return (
     <div className="about-page" style={{ padding: "40px 5% 80px 5%", maxWidth: "1280px", margin: "0 auto" }}>
       {/* Hero Header */}
-      <section style={{ display: "grid", gridTemplateColumns: "1.1fr 0.9fr", gap: "50px", alignItems: "center", marginBottom: "60px", background: "linear-gradient(135deg, #EFF6FF 0%, #ECFEFF 100%)", padding: "50px 40px", borderRadius: "28px", border: "1px solid #BFDBFE" }}>
+      <section style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "30px", alignItems: "center", marginBottom: "60px", background: "linear-gradient(135deg, #EFF6FF 0%, #ECFEFF 100%)", padding: "40px 20px", borderRadius: "28px", border: "1px solid #BFDBFE" }}>
         <div>
           <span className="section-label">ABOUT US</span>
-          <h1 style={{ color: "#1E3A8A", fontSize: "42px", lineHeight: "1.2", margin: "15px 0", fontWeight: "800" }}>
+          <h1 style={{ color: "#1E3A8A", fontSize: "36px", lineHeight: "1.2", margin: "15px 0", fontWeight: "800" }}>
             Change A Life, <br />
             <span style={{ color: "#06B6D4" }}>Build a Future.</span>
           </h1>
@@ -31,7 +31,7 @@ function About() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          style={{ height: "360px", borderRadius: "24px", overflow: "hidden", boxShadow: "0 20px 40px rgba(0,0,0,0.08)", border: "1px solid #E5E7EB" }}
+          style={{ width: "100%", height: "300px", borderRadius: "24px", overflow: "hidden", boxShadow: "0 20px 40px rgba(0,0,0,0.08)", border: "1px solid #E5E7EB" }}
         >
           <img src="https://images.unsplash.com/photo-1594708767771-a7502209ff51?auto=format&fit=crop&w=1000&q=80" alt="Global Foundation Rural Community Development" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
         </motion.div>
