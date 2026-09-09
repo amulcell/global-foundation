@@ -188,3 +188,20 @@ nav {
   color: #93C5FD;
   font-weight: 600;
 }
+/* Fix mobile image distortion across pages */
+@media (max-width: 768px) {
+  img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  /* Ensure container divs don't restrict images into thin columns on mobile */
+  .about-image-container, 
+  .gallery-hero-image, 
+  .project-image-container {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 350px;
+  }
+}
