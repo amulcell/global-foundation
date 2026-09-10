@@ -1,21 +1,57 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Heart, X, Sparkles } from "lucide-react";
 import { projectImages } from "../data/projectImages";
 
 function DonationPopup() {
   const [isVisible, setIsVisible] = useState(false);
+  const location = useLocation();
+
+  // List of paths where the popup should definitely NOT appear
+  const excludedPaths = [
+    "/about",
+    "/founders",
+    "/project-directors",
+    "/projects",
+    "/gallery",
+    "/impact",
+    "/certifications",
+    "/contact",
+    "/get-involved"
+  ];
+
+  const isExcluded = excludedPaths.includes(location.pathname.toLowerCase());
+  const isHomePage = location.pathname === "/" && !isExcluded;
 
   useEffect(() => {
-    // Show popup shortly after page/route opens
+    // If we are on any excluded page or not home, immediately close it
+    if (!isHomePage) {
+      setIsVisible(false);
+      return;
+    }
+
+    // 5-second timer specifically for the home page
     const timer = setTimeout(() => {
       setIsVisible(true);
-    }, 1500);
-    return () => clearTimeout(timer);
-  }, []);
+    }, 5000);
 
-  if (!isVisible) return null;
+    return () => clearTimeout(timer);
+  }, [location.pathname, isHomePage]);
+
+  // Handle repeating loop every 5 seconds after close, strictly on home page
+  useEffect(() => {
+    if (!isHomePage || isVisible) return;
+
+    const repeatTimer = setTimeout(() => {
+      setIsVisible(true);
+    }, 5000);
+
+    return () => clearTimeout(repeatTimer);
+  }, [isVisible, isHomePage]);
+
+  // Hard block rendering on any page except home
+  if (!isHomePage || !isVisible) return null;
 
   return (
     <AnimatePresence>

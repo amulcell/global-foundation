@@ -133,32 +133,37 @@ function ActionPopup() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const location = useLocation();
 
-  const isContactPage = location.pathname === "/contact";
+  // Strictly check if we are on the exact Home page path "/"
+  const isHomePage = location.pathname === "/";
 
   useEffect(() => {
-    if (isContactPage) {
+    // If NOT on the home page, immediately close and do not start the timer
+    if (!isHomePage) {
       setIsOpen(false);
       return;
     }
 
+    // 5-second initial delay before displaying the popup on the home page
     const timer = setTimeout(() => {
       setIsOpen(true);
-    }, 1200);
+    }, 5000);
 
     return () => clearTimeout(timer);
-  }, [location.pathname]);
+  }, [location.pathname, isHomePage]);
 
   useEffect(() => {
-    if (!isOpen || isContactPage) return;
+    if (!isHomePage || !isOpen) return;
 
+    // Rotate cards every 5 seconds
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % popupData.length);
-    }, 2000);
+    }, 5000);
 
     return () => clearInterval(interval);
-  }, [isOpen, isContactPage]);
+  }, [isHomePage, isOpen]);
 
-  if (isContactPage || !isOpen) return null;
+  // Hard block rendering on any path other than the home page
+  if (!isHomePage || !isOpen) return null;
 
   const currentPopup = popupData[currentIndex];
 
