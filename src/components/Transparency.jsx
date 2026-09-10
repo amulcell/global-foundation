@@ -16,6 +16,20 @@ function Transparency() {
       description: "Approved by the Ministry of Corporate Affairs, Government of India.",
       fileUrl: "/Approval-Letter-for-form-CSR.pdf",
       tag: "CSR Compliance"
+    },
+    {
+      title: "Income Tax 12A Registration",
+      idNumber: "URN: AAHAG5682LE20221",
+      description: "Provisional registration under sub-clause (vi) of clause (ac) of sub-section (1) of section 12A[cite: 2].",
+      fileUrl: "/AAHAG5682LE20221_signed-12A.pdf",
+      tag: "Tax Exemption"
+    },
+    {
+      title: "Income Tax 80G Approval",
+      idNumber: "URN: AAHAG5682LF20221",
+      description: "Provisional approval under sub-section (5) of section 80G of the Income Tax Act[cite: 1].",
+      fileUrl: "/AAHAG5682LF20221_signed-80G.pdf",
+      tag: "Donor Tax Benefit"
     }
   ];
 
